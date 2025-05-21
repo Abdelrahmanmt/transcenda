@@ -2,7 +2,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Vapi from '@vapi-ai/web';
 import React from 'react';
 
 import { useVapi } from '@/contexts/VapiContext';
@@ -50,7 +49,7 @@ declare global {
 // const vapi = new Vapi('7b2422cb-d622-47b4-b6b7-38e8cb567ec1'); // Moved to context
 
 const VapiAgent = () => {
-  const { isVapiActive, startVapi, stopVapi, vapiState } = useVapi();
+  const { startVapi, vapiState } = useVapi();
   // const [vapiState, setVapiState] = React.useState('initial'); // State moved to context
 
   // Remove the useEffect for automatic listening and wake word

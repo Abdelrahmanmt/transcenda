@@ -19,11 +19,6 @@ interface About3Props {
     buttonText?: string;
     buttonUrl?: string;
   };
-  companiesTitle?: string;
-  companies?: Array<{
-    src: string;
-    alt: string;
-  }>;
   achievementsTitle?: string;
   achievementsDescription?: string;
   achievements?: Array<{
@@ -31,40 +26,6 @@ interface About3Props {
     value: string;
   }>;
 }
-
-const defaultCompanies = [
-  {
-    src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-1.svg",
-    alt: "Arc",
-  },
-  {
-    src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-2.svg",
-    alt: "Descript",
-  },
-  {
-    src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-3.svg",
-    alt: "Mercury",
-  },
-  {
-    src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-4.svg",
-    alt: "Ramp",
-  },
-  {
-    src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-5.svg",
-    alt: "Retool",
-  },
-  {
-    src: "https://shadcnblocks.com/images/block/logos/company/fictional-company-logo-6.svg",
-    alt: "Watershed",
-  },
-];
-
-const defaultAchievements = [
-  { label: "Companies Supported", value: "300+" },
-  { label: "Projects Finalized", value: "800+" },
-  { label: "Happy Customers", value: "99%" },
-  { label: "Recognized Awards", value: "10+" },
-];
 
 export const About3 = ({
   title = "About Us",
@@ -86,11 +47,14 @@ export const About3 = ({
     buttonText: "Discover more",
     buttonUrl: "https://calendly.com/transcenda-io/30min?month=2025-05",
   },
-  companiesTitle = "Valued by clients worldwide",
-  companies = defaultCompanies,
   achievementsTitle = "Our Achievements in Numbers",
   achievementsDescription = "Providing businesses with effective tools to improve workflows, boost efficiency, and encourage growth.",
-  achievements = defaultAchievements,
+  achievements = [
+    { label: "Companies Supported", value: "300+" },
+    { label: "Projects Finalized", value: "800+" },
+    { label: "Happy Customers", value: "99%" },
+    { label: "Recognized Awards", value: "10+" },
+  ],
 }: About3Props = {}) => {
   return (
     <section className="py-32">

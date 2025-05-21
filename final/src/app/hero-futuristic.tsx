@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { Canvas, extend, useFrame, useThree } from '@react-three/fiber';

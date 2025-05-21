@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { Canvas, extend, useFrame, useThree } from '@react-three/fiber';
@@ -164,7 +165,7 @@ export const Html = () => {
     // Только на клиенте: генерируем случайные задержки для глитча
     setDelays(titleWords.map(() => Math.random() * 0.07));
     setSubtitleDelay(Math.random() * 0.1);
-  }, [titleWords.length]);
+  }, [titleWords.length, titleWords]);
 
   useEffect(() => {
     if (visibleWords < titleWords.length) {
@@ -195,7 +196,9 @@ export const Html = () => {
         <div className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl mt-2 overflow-hidden text-white font-bold">
           <div
             className={subtitleVisible ? 'fade-in-subtitle' : ''}
-            style={{ animationDelay: `${titleWords.length * 0.13 + 0.2 + subtitleDelay}s`, opacity: subtitleVisible ? undefined : 0 }}
+            style={{
+              animationDelay: `${titleWords.length * 0.13 + 0.2 + subtitleDelay}s`, opacity: subtitleVisible ? 1 : 0
+            }}
           >
             {subtitle}
           </div>
